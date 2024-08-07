@@ -17,18 +17,20 @@ import {
 import { useRouter } from "expo-router";
 import Loading from "../components/Loading";
 import { useAuth } from "../context/authContext";
+// import { GoogleSigninButton } from "@react-native-google-signin/google-signin";
 
 export default function signIn() {
   const [seePassword, setSeePassword] = useState(true);
 
   const [loading, setLoading] = useState(false);
+  const [loading2, setLoading2] = useState(false);
 
   const router = useRouter();
 
   const emailRef = useRef("");
   const passwordRef = useRef("");
 
-  const { login } = useAuth();
+  const { login, GoogleLogin } = useAuth();
 
   const handelSubmit = async () => {
     if (!emailRef.current || !passwordRef.current) {
@@ -51,6 +53,28 @@ export default function signIn() {
 
       console.log("invalid email", typeof response.msg);
     }
+  };
+
+  const handelGoogleSubmit = async () => {
+    // if (!emailRef.current || !passwordRef.current) {
+    //   Alert.alert("Sign In", "please fill all the Fields", [
+    //     { text: "OK", onPress: () => console.log("OK Pressed") },
+    //   ]);
+    //   return;
+    // }
+    setLoading2(true);
+
+    let response = await GoogleLogin();
+    setLoading2(false);
+
+    console.log("got response", response);
+    // if (!response.success) {
+    //   const msg = response.msg;
+    //   Alert.alert("Sign In", msg, [
+    //     { text: "OK", onPress: () => console.log("OK Pressed") },
+    //   ]);
+
+    //   console.log("invalid email", typeof response.msg);
   };
 
   return (
@@ -159,6 +183,23 @@ export default function signIn() {
                 Sign Up
               </Text>
             </TouchableOpacity>
+          </View>
+
+          <View>
+            {loading2 ? (
+              <View className="flex-row justify-center">
+                <Loading size={hp(8)} />
+              </View>
+            ) : (
+              <TouchableOpacity>
+                <View
+                  style={{ height: hp(7) }}
+                  className=" bg-[#54e6a9] items-center justify-center rounded-sm"
+                >
+                  <Text className="text-white">Sign in with Google</Text>
+                </View>
+              </TouchableOpacity>
+            )}
           </View>
         </View>
       </View>

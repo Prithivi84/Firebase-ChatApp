@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "25770216044",
+    "project_id": "furi-app-5e940",
+    "storage_bucket": "furi-app-5e940.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:25770216044:android:743d473035a695caa9a649",
+        "android_client_info": {
+          "package_name": "com.anonymous.Firebase_Chat"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "25770216044-0jr4a4gmc3gdpmp7217qomtrupu37g4r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.anonymous.Firebase_Chat",
+            "certificate_hash": "b4a8449c418168dd6552b6c662eda62c86013f93"
+          }
+        },
+        {
+          "client_id": "25770216044-ksjb9ts2f9i271tgd6adf8ag540ht6t1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBtjt8IlHvZ83FzrtxcZJu8QDAlwCnL30Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "25770216044-0t5tct8qbd66o1jchj7rih5cdu4dbpsu.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
